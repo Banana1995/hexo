@@ -1,0 +1,58 @@
+language: node_js
+node_js: stable
+cache:
+    apt: true
+    directories:
+        - node_modules
+# S: Build Lifecycle
+notifications:
+    email:
+        recipients:
+            - 1770261049@qq.com
+        on_success: change
+        on_failure: always
+        
+before_install:
+    - export TZ='Asia/Shanghai'
+    - npm install hexo-cli -g
+    - npm install hexo-math --save
+    - chmod +x ./publish-to-gh-pages.sh
+    
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - hexo clean
+  - hexo g
+
+after_script:
+  - ./publish-to-gh-pages.sh
+#deploy:
+#  provider: pages
+#  cleanup: false # 构建完成后不清除
+#  token: $GH_TOKEN # 你刚刚设置的 token
+#  keep_history: true # 保存历史
+#  on:
+#    branch: hexo # hexo 站点源文件所在的 branch
+#  local_dir: public 
+#  target_branch: master # 存放生成站点文件的 branch，使用 username.github.io 必须是 master
+#  - cd ./blog/public
+#  - git init
+#  - git config user.name "Banana1995"
+#  - git config user.email "1770261049@qq.com"
+#  - git add .
+#  - git commit -m "Update docs"
+#  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+    - hexo
+env:
+ global:
+   - GH_REF:  github.com/Banana1995/banana1995.github.io.git
+ #  - GH_REF: git@github.com:Banana1995/banana1995.github.io.git

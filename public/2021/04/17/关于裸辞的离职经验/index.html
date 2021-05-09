@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小蚂蚁爱吃香蕉" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="关于辞职这件事情，在不同的行业不同的岗位肯定也有着不同的方式，而每个人肯定都会对此有不同的看法。我也不知道什么样的方式是合理的，合适的，收益最大的。写下这篇文章只是为了记录下个人的经验和思考，以便日后回味与借鉴。 慎重决定是否辞职在谈裸辞之前，首先我觉得需要谈论的是辞职这件事情本身。 听说马云说过这么一句话：  员工离职的缘由只有两个，要么受委屈了，要么钱没给够。  原话是不是这样我不太清楚，是不">
+<meta name="keywords" content="Java,源码解析,中间件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小蚂蚁爱吃香蕉">
+<meta property="og:url" content="http://yoursite.com/2021/04/17/关于裸辞的离职经验/index.html">
+<meta property="og:site_name" content="小蚂蚁爱吃香蕉">
+<meta property="og:description" content="关于辞职这件事情，在不同的行业不同的岗位肯定也有着不同的方式，而每个人肯定都会对此有不同的看法。我也不知道什么样的方式是合理的，合适的，收益最大的。写下这篇文章只是为了记录下个人的经验和思考，以便日后回味与借鉴。 慎重决定是否辞职在谈裸辞之前，首先我觉得需要谈论的是辞职这件事情本身。 听说马云说过这么一句话：  员工离职的缘由只有两个，要么受委屈了，要么钱没给够。  原话是不是这样我不太清楚，是不">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-05-07T13:30:24.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小蚂蚁爱吃香蕉">
+<meta name="twitter:description" content="关于辞职这件事情，在不同的行业不同的岗位肯定也有着不同的方式，而每个人肯定都会对此有不同的看法。我也不知道什么样的方式是合理的，合适的，收益最大的。写下这篇文章只是为了记录下个人的经验和思考，以便日后回味与借鉴。 慎重决定是否辞职在谈裸辞之前，首先我觉得需要谈论的是辞职这件事情本身。 听说马云说过这么一句话：  员工离职的缘由只有两个，要么受委屈了，要么钱没给够。  原话是不是这样我不太清楚，是不">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/04/17/关于裸辞的离职经验/"/>
+
+
+
+
+
+  <title> | 小蚂蚁爱吃香蕉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小蚂蚁爱吃香蕉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">It's what you do in the dark puts you in the light</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/17/关于裸辞的离职经验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-17T17:06:26+08:00">
+                2021-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,537
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于辞职这件事情，在不同的行业不同的岗位肯定也有着不同的方式，而每个人肯定都会对此有不同的看法。我也不知道什么样的方式是合理的，合适的，收益最大的。写下这篇文章只是为了记录下个人的经验和思考，以便日后回味与借鉴。</p>
+<h1 id="慎重决定是否辞职"><a href="#慎重决定是否辞职" class="headerlink" title="慎重决定是否辞职"></a>慎重决定是否辞职</h1><p>在谈裸辞之前，首先我觉得需要谈论的是辞职这件事情本身。</p>
+<p>听说马云说过这么一句话：</p>
+<blockquote>
+<p>员工离职的缘由只有两个，要么受委屈了，要么钱没给够。</p>
+</blockquote>
+<p>原话是不是这样我不太清楚，是不是马云说的我也不太清楚，懒得查证了。只是这句话被很多人流传，大家都觉得很有道理。既然大家都觉得有道理，那么它也一定是概括了很大一部分人的离职理由。但是对于我来说，我的离职理由却不在其中。得益于受领导赏识，在上家公司工作的时候并没有受过什么天大的委屈，并且公司给我的工资虽说比不上一些同学们在互联网大厂的水平，但也算得上是跟得上平均线。相对于公司的工作强度和压力来说，价格偏低但是不至于到需要离职的地步。并且在部门里，我的工作非常核心，以后职业上升空间也很大，长期在公司做下去的话，手里的期权价值伴随着公司成长，日后若能兑现也能获得一番不错的收益。</p>
+<p>对我来说，真正离职的原因应该是超出我身体所能承受的工作强度与压力，还有与个人价值观相悖的公司文化。</p>
+<p>在决定要离职之前，我思考了很久，大概持续了几个月。我也一直在离职的边缘犹豫，徘徊。一方面是工作的压力与强度太大。我每次在出差之后便要去一趟医院，身体这个机器总有些毛病需要去医院里修理一下，我开始意识到出差时的压力和强度已经超出了我身体的负荷了，长期这样下去必然不可持续。另一方面，我喜欢自己的工作内容，忙碌使得我每天过的充实，过一段时间回头看自己走过的路发现那些都是成长。同时工作创造的价值得到了同事和领导的认可，也让自己很有成就感。这两方面的力一起作用在我身上，使得我有一种痛并快乐着的感觉。</p>
+<p>压倒我的最后一根稻草是最后一次出差，那一次也是我在公司三年经历的压力最大，强度最高，时间最长的一次任务。在那次出差任务中，最长一次熬了三天两夜，中间只睡了四五个小时。整个出差周期长达一个月，基本是除了七八个小时的睡觉吃饭时间，其他全在工作的状态，更别谈什么周末休息了。在整个出差周期结束后，公司体恤我们辛苦，给我们放了一天的假期。那天是周五，连着周末可以放三天。而我在出差返回深圳的路上得知会放一天假的时候，心理已经做好了离职的决定。</p>
+<p>彼时已经接近年尾，我决定得到年后拿了年终奖再提离职流程，同时也开始进行辞职准备工作。刚好等到了年后，我也在公司工作了两年，到时候出去简历也会好看些。</p>
+<p>至此，促使我辞职的理由变成了：</p>
+<ul>
+<li>超出身体承受能力的压力和强度，不可持续。</li>
+<li>公司以狼性文化要求和对待员工，却不提供可观的回报。</li>
+<li>作为程序猿，在公司工作了两年，即使不离职也应该去面试了解下市场的行情与技术，避免与市场脱节。</li>
+<li>工作时间太久，没有私人生活，导致工作生活无法平衡。长远来看（三到五年），没有时间阅读和思考，技术和非技术上都不会有太大的提升，最后会被困在眼前这份工作里，思维跳脱不出来，也无法尝试更多可能，生活一团糟。这些对自己的发展极为不利。</li>
+</ul>
+<p>而让我留下的理由变成了：</p>
+<ul>
+<li>工作内容核心，自己非常熟悉，领导赏识，职业向上晋级空间大，难度低。</li>
+<li>公司的期权伴随着公司上市会带来可观的回报</li>
+<li>稳定的工作状态和生活环境也是我所追求的，伴随公司长期成长才能获得较大的利益，同时我也很热爱深圳这座城市，那里的气候真是太让我喜欢了。（这里与程序猿过两年就该去面试不冲突，面试并不全是为了换工作。对我而言更多的是对自己查缺补漏，看看市场的价格，看看市场上的人才要求。再对比自己的不足，促进自己成长）</li>
+</ul>
+<p>于是，针对以上两方面，我反问自己以下几个问题：</p>
+<ul>
+<li>工作强度和压力在身体承受范围内，但是依旧会长期加班，没有私人时间，我会不会留下来？答案是不会，为了长期发展，这样的生活我不想接受。</li>
+<li>公司给足了钱，达到与互联网大厂同级的水平，我会不会留下来？答案是不会，而且我心里也并不想为了钱去那些互联网大厂。</li>
+<li>公司不再要求狼性文化，团队氛围不再996，我会不会留下来？答案是依旧会去找机会面试，但很大的可能会留下来。</li>
+<li>公司期权的兑现预期如何？能获得大概多少的回报？按照我离职时听到的消息，大概我可以获得五百万以内的回报，公司上市至少需要三年，中间包含的变量太多，上市后还不清楚公司会不会出台一些对期权变现的限制政策。</li>
+</ul>
+<p>对上面这几个问题有了答案之后，再结合现实中，公司极大概率会是长期996，工作强度和压力在我身体接受范围的边缘状态，但是我没有时间阅读，试错，提升。而这些是我非常看重的东西，在我看来人的成长是自己对这个世界认知的过程，没有时间阅读和试错的话就无法获取更多的认知，也就无法成长。</p>
+<blockquote>
+<p>试想一下，如果每天的时间都花在了工作的一亩三分地中，所接触的环境，遇到和解决的问题都是在一个范围内的，你每天没有时间和精力去干别的什么事情。当有一天，你遇到了这个范围以外的问题，你会发现自己是个新手，什么都不会，会有很强的无力感。这也是我前面说的会被困在工作里的意思。</p>
+<p>整个世界是非常庞大的，更多的问题来自于这个范围以外，我需要更多的时间来认知这个范围之外的事情，这些事情包括亲情关系，社会关系，社会运转体系等等。我相信只有对这些事情有更好的认知，才能在以后的生活中遇到困难与挫折时更加从容的面对它们，不至于感到无能为力而陷入焦虑。而只有阅读和试错才能让我更好的认知它们，我把这称为扩大自己的能力圈。</p>
+</blockquote>
+<p>在另一方面，获得期权回报的不确定性太高，而且这些回报与我所看重的扩大能力圈相比，至少在我现在这个阶段后者应该更重要。</p>
+<p>以上是我整个离职的思考过程，在要不要离职的这个决定的背后，占比最多的是我在扩大能力圈和坚持陪伴公司成长获得回报之间做出的选择。而做出这个选择的背后，是我对自己的认知。这个选择最终的结果，可能得多年后才能知道，如果我选错了，我想更可能的原因是由于对自己的认知不足，导致扩大能力圈失败。但是我想我不会后悔，因为这也是个试错的过程。</p>
+<h1 id="更加慎重的决定是否裸辞"><a href="#更加慎重的决定是否裸辞" class="headerlink" title="更加慎重的决定是否裸辞"></a>更加慎重的决定是否裸辞</h1><p>在决定了要辞职之后，下一个问题是该怎么辞职？是骑驴找马，还是直接裸辞。由于客观条件限制，我基本无法做到骑驴找马，所以选择了裸辞。但是在裸辞之前，需要先考虑一些实际的问题：</p>
+<ul>
+<li>生活压力（钱）的问题</li>
+</ul>
+<p>对于大部分人来说，裸辞最大的影响应该是没有了收入来源。所以在裸辞的时候，需要考虑到将来的一段时间完全没有收入，手里的钱够自己生活多久。有很多人不知道自己一个月会花多少钱，拍脑袋算出来的数目很可能并不客观。建议拉出自己过去一年的账单，计算下每个月的支出项目平均值。一年内有贷款的话，注意需要将自己的日常消费与贷款还款的钱分开计算，否则平均值有可能不能够代表未来一段时间的支出。</p>
+<p>除了日常消费和贷款偿还的钱以外，还建议考虑下意外情况的支出，给自己做足压力测试。</p>
+<p>以我为例，预期是自己半年的时间没有收入，没有需要偿还的贷款，在加上之前已经为生活的意外情况准备过一些预案，因此我需要准备好一笔勾自己半年花的钱才能裸辞。</p>
+<ul>
+<li>心理压力的问题</li>
+</ul>
+<p>裸辞所遇到的钱的问题，相对容易解决，更难以解决的是心理压力问题。如果你把裸辞的事情告诉了家里人，家里人可能隔三差五就要来问问你，替你担心。</p>
+<p>以我为例，初期我没告诉家里人我裸辞了，想着自己gap一段时间，好好沉淀下，夯实基础再去面试。于是开始做一些学习计划，然而后面由于计划执行进度落后自己预期，会时常感到焦虑。同时偶尔的身体状态不好，也更拖累学习进度，心理状态更加不好，容易陷入恶性循环。</p>
+<p>我爷爷在后期得知了我裸辞之后，特别着急，隔三差五就来电话询问我找工作的情况。本来我的心态还行，但是在他那样的状态下，我反而要去安慰他。很影响我自己的心态。</p>
+<h1 id="辞职准备"><a href="#辞职准备" class="headerlink" title="辞职准备"></a>辞职准备</h1><p>在做好了辞职决定，并且接受裸辞后，就需要开始做一些辞职准备了。</p>
+<ul>
+<li>如果可以的话，想清楚自己要什么</li>
+</ul>
+<p>在做完了辞职决定的时候，你心理一定清楚的是自己不要什么。但是你也可能会跟我一样，不知道自己要什么。这个问题对我来说很难。只是很清楚那样的工作和生活我不想要，但是完全看不清未来，不知道自己想要什么，没有方向感。如果能够想清楚的话，那也会目标很清晰，不会觉得未来迷茫，对后续的规划很有帮助。</p>
+<p>我其实直到离职之后很长一段时间都没有想清楚这个问题。但是有了一个模糊的方向后，朝着那个方向努力，踏出离职这第一步也是比较重要的。</p>
+<ul>
+<li>一份规划</li>
+</ul>
+<p>首先是需要做个规划，每个人裸辞后做的事情不太一样，但是大体上你都需要一个规划。这个规划建议以更长的视角来看。</p>
+<p>还是以我为例，我计划裸辞后，下一份工作尽量摆脱无休止的加班，即使在薪资上有所妥协也愿意。那么观察了一圈，发现最合适的是外企，其次是甲方单位。但是甲方大多是国企，风格上我不太喜欢。所以就很想去外企。接着在深圳这座城市，合适的外企并不多，更多的是在上海。去往上海的话，离我家更近，对我来说也是个不错的选择。尽管我很喜欢深圳，但是为了长久考虑，去上海更适合我。</p>
+<p>确定了去上海的外企这个方向后，就需要围绕这个目标来做规划。外企一般对英语要求较高，所以加强英语方面的能力势在必行。同时，自己的几个目标公司都对算法要求较高，那系统的练习算法也是必须的。同时，还有关于系统设计和基础知识方面的内容。建议这个时候可以开始写简历了，在一家公司干了一段时间，能够写在简历上带走的才是你的能力。写简历有助于梳理自己的技能树，更好的做规划。</p>
+<p>做规划需要尽可能的详细和考虑更多的因素，并且在离职前就开始按照规划进行。比如规划每一件事情，要尽量包含目标，达到目标的时间，每天的节奏等。然后离职前开始按照规划执行，这样可以让自己明白自己的速度，能否顺利完成规划的事情，是否需要调整预期，或者作出取舍。有时候并不是自己不够自律的按计划执行，而是低估了完成目标需要花费的时间，或者是高估了自己所拥有的时间。这些在离职前就开始着手进行的话，会有较多的试错和调整空间。</p>
+<p>还有一点比较重要的是，在规划完之后，将截止日期往后延期一两个月。这是因为我一般做计划都喜欢给自己预留缓冲量。倒不是给自己拖延找时间。而是为了避免中途发生的意外情况。就像我一般赶车，正常提前一个小时到机场基本就够了，但是我会提前一个半小时到机场，这样我走到一半发现身份证没带回去拿还有机会赶得上。</p>
+<blockquote>
+<p>这一点是我在离职前没有做好的事情。我只是有了个大概的目标，但是毫无规划。后来离职后的规划做的太离谱，给自己排的时间不够。高估了自己完成任务的速度，这导致我完成一件事情会延期，离职后一旦规划的事情出现了延期，就会很影响心态。</p>
+</blockquote>
+<ul>
+<li>攒够钱</li>
+</ul>
+<p>在完成规划后，你知道自己大概需要多久能获得下一份工作。在开始下一份工作后，再过一个月才能拿到收入。因此，你需要攒够这一段时间要花的钱。这里我也是喜欢给自己留足缓冲量，除了家里的应急钱和gap期间的生活开支以外，再多留两三个月的支出。这是为了预防我没能在预期时间内找到工作。</p>
+<p>个人觉得，做好了上面的事情就可以开始提出走离职流程了。</p>
+<h1 id="辞职后"><a href="#辞职后" class="headerlink" title="辞职后"></a>辞职后</h1><p>在离开了公司后，由于会有一段空档期。所以这段时间最需要注意的是自己的社保情况。可以自己找淘宝代缴，也可以自己去人社局缴，各地政策不太一样，但是最好能够保证不会断档。因为断档会影响购房等资格。淘宝代缴的话需要提前跟卖家沟通好，要与新公司开始缴纳的接续上，不然淘宝退的晚可能也会有问题。这点需要注意。</p>
+<p>当然政策会时有更新，这只是目前的情况。</p>
+<h1 id="找工作准备"><a href="#找工作准备" class="headerlink" title="找工作准备"></a>找工作准备</h1><p>离职前已经做的那些准备都是为了在gap期可以不要有那么大的压力。对我来说，储蓄了足够的现金使得我在gap期遇到各种意外情况时都觉得不至于压力很大。更多的压力来源于该怎样找到一份合适的好工作。</p>
+<p>原本计划就是在gap期做些沉淀，然后再出去尝试。我列举了一系列的目标公司，针对公司的招聘jd进行准备。有些公司偏重算法，有些偏重基础，有些偏重系统架构设计。这些都需要做一些准备，否则贸然去面可能不会有好结果，并且被吊打了的话还蛮影响心态的。</p>
+<p>也可以去各个网站，论坛，脉脉，知乎，牛客了解下公司的面经和公司整体情况。不符合目标的公司就不要浪费时间了。每一场面试都应该是有目的和意义的。有得为了锻炼自己，有得为了提升信心，有得为了练手。但是不要用那些垃圾公司来做试金石，因为你可能碰到一个垃圾的面试官，那样就纯粹是浪费时间浪费精力。</p>
+<h1 id="学习经验"><a href="#学习经验" class="headerlink" title="学习经验"></a>学习经验</h1><p>我在gap期做了很多算法，系统设计还有java训练营的学习。但是对市面上的一些流行技术了解不够多，这方面还是比较被动。只有在我实际开始学习，开始做准备的时候，我才意识到原来差距真的挺大的。很多应届生的面试题我都不会。后来开始学习的时候，又各种原因耽误，始终难以进入最佳状态。一天能够做的事情真的很少，当时我一天既要学习架构又要学习算法，结果后来就导致架构没学好，算法进展也很慢。一个月下来，发现与自己的预期相差甚远。</p>
+<p>另一方面，自己也低估了期望公司的面试难度。事前没有做好调查，我以为难度是70分，然而实际上的难度是90分。我本以为做到70分需要一个月，实际上快的也需要三个月，做到90分需要五个月。这还是在全心投入一件事情上的结果，而我想要同时学习多个方向，效果更差。这些都是我先前没有调查清楚，没有提前行动，导致我的规划基本上不可实现。</p>
+<p>后来我放弃学习架构和训练营，主攻算法，同时复习基础内容。最后也放弃了列表里的一部分公司。其实这些学习积累更多的应该是平时做，而不是离职后才做。但是之前的工作太忙，根本没时间做这么多积累输出。甚至对于系统的架构设计都没太多时间查阅资料，做详细的研究和验证。导致离开了工作后，真正能带走的属于自己的东西不多。这也是我讨厌无休止加班的原因。</p>
+<h1 id="心态调整"><a href="#心态调整" class="headerlink" title="心态调整"></a>心态调整</h1><p>在gap期间，我生过几次小病，还晕倒过一次。每次一生病就会让自己变得很低落。同时由于学习进度落后太多，自己又会陷入焦虑。看着目标公司的门槛比自己预期的高出一大截，心理的焦虑又增加几分。生病期间，整个人都是很不好的状态。所幸我没有面临太多来自家里人的压力，因为他们不知道我裸辞了。直到现在我已经入职新公司了，依旧觉得这个决定做的很对。我父母还好，基本不会太过问。但是爷爷奶奶就非常担心。感觉他们比我还要焦虑。</p>
+<p>所以，离职后虽然自由，但是依旧要小心的保护好自己身体健康。一定要饮食规律！锻炼身体我就不说了，作息规律，饮食规律非常重要。离职后每天就睡到中午，然后开始打游戏，追剧。这种日子偶尔过两天还行。但是裸辞的话，最好一天也不要过这样的日子。首先是因为这种日子真的很有吸引力，一旦过上了就不想离开了。我生病的时候就会让自己变成一个毫不努力的废物的状态。废物真的太舒服了，所以即使后来身体恢复了也不想朝九晚五的去学习。但是不学习，不努力又会使我变得焦虑。所以我整个gap期间，这样的日子过得也不多。大多数日子，只要有空我就会去图书馆或者咖啡馆，进步会极大的缓解我的焦虑，甚至会让我有开心的感觉。</p>
+<p>因此我在gap期间，焦虑状态有过好几次，但是得益于坚持学习和足够的储蓄，最终算是平安度过，最后也拿到个自己觉得合适的offer。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/17/关于第二次换工作的面试经验/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="小蚂蚁爱吃香蕉" />
+            
+              <p class="site-author-name" itemprop="name">小蚂蚁爱吃香蕉</p>
+              <p class="site-description motion-element" itemprop="description">至诚，至坚，博学，笃行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Banana1995" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="gaomanyi698@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/chenpi/" title="风一样的码农" target="_blank">风一样的码农</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hollischuang.com/" title="hollischuang" target="_blank">hollischuang</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#慎重决定是否辞职"><span class="nav-number">1.</span> <span class="nav-text">慎重决定是否辞职</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更加慎重的决定是否裸辞"><span class="nav-number">2.</span> <span class="nav-text">更加慎重的决定是否裸辞</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辞职准备"><span class="nav-number">3.</span> <span class="nav-text">辞职准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#辞职后"><span class="nav-number">4.</span> <span class="nav-text">辞职后</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#找工作准备"><span class="nav-number">5.</span> <span class="nav-text">找工作准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习经验"><span class="nav-number">6.</span> <span class="nav-text">学习经验</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#心态调整"><span class="nav-number">7.</span> <span class="nav-text">心态调整</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小蚂蚁爱吃香蕉</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

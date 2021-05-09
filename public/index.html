@@ -1,0 +1,2683 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/avatar.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小蚂蚁爱吃香蕉" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="至诚，至坚，博学，笃行">
+<meta name="keywords" content="Java,源码解析,中间件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小蚂蚁爱吃香蕉">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="小蚂蚁爱吃香蕉">
+<meta property="og:description" content="至诚，至坚，博学，笃行">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小蚂蚁爱吃香蕉">
+<meta name="twitter:description" content="至诚，至坚，博学，笃行">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>小蚂蚁爱吃香蕉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小蚂蚁爱吃香蕉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">It's what you do in the dark puts you in the light</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/17/关于裸辞的离职经验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/17/关于裸辞的离职经验/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-17T17:06:26+08:00">
+                2021-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,537
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于辞职这件事情，在不同的行业不同的岗位肯定也有着不同的方式，而每个人肯定都会对此有不同的看法。我也不知道什么样的方式是合理的，合适的，收益最大的。写下这篇文章只是为了记录下个人的经验和思考，以便日后回味与借鉴。</p>
+<h1 id="慎重决定是否辞职"><a href="#慎重决定是否辞职" class="headerlink" title="慎重决定是否辞职"></a>慎重决定是否辞职</h1><p>在谈裸辞之前，首先我觉得需要谈论的是辞职这件事情本身。</p>
+<p>听说马云说过这么一句话：</p>
+<blockquote>
+<p>员工离职的缘由只有两个，要么受委屈了，要么钱没给够。</p>
+</blockquote>
+<p>原话是不是这样我不太清楚，是不是马云说的我也不太清楚，懒得查证了。只是这句话被很多人流传，大家都觉得很有道理。既然大家都觉得有道理，那么它也一定是概括了很大一部分人的离职理由。但是对于我来说，我的离职理由却不在其中。得益于受领导赏识，在上家公司工作的时候并没有受过什么天大的委屈，并且公司给我的工资虽说比不上一些同学们在互联网大厂的水平，但也算得上是跟得上平均线。相对于公司的工作强度和压力来说，价格偏低但是不至于到需要离职的地步。并且在部门里，我的工作非常核心，以后职业上升空间也很大，长期在公司做下去的话，手里的期权价值伴随着公司成长，日后若能兑现也能获得一番不错的收益。</p>
+<p>对我来说，真正离职的原因应该是超出我身体所能承受的工作强度与压力，还有与个人价值观相悖的公司文化。</p>
+<p>在决定要离职之前，我思考了很久，大概持续了几个月。我也一直在离职的边缘犹豫，徘徊。一方面是工作的压力与强度太大。我每次在出差之后便要去一趟医院，身体这个机器总有些毛病需要去医院里修理一下，我开始意识到出差时的压力和强度已经超出了我身体的负荷了，长期这样下去必然不可持续。另一方面，我喜欢自己的工作内容，忙碌使得我每天过的充实，过一段时间回头看自己走过的路发现那些都是成长。同时工作创造的价值得到了同事和领导的认可，也让自己很有成就感。这两方面的力一起作用在我身上，使得我有一种痛并快乐着的感觉。</p>
+<p>压倒我的最后一根稻草是最后一次出差，那一次也是我在公司三年经历的压力最大，强度最高，时间最长的一次任务。在那次出差任务中，最长一次熬了三天两夜，中间只睡了四五个小时。整个出差周期长达一个月，基本是除了七八个小时的睡觉吃饭时间，其他全在工作的状态，更别谈什么周末休息了。在整个出差周期结束后，公司体恤我们辛苦，给我们放了一天的假期。那天是周五，连着周末可以放三天。而我在出差返回深圳的路上得知会放一天假的时候，心理已经做好了离职的决定。</p>
+<p>彼时已经接近年尾，我决定得到年后拿了年终奖再提离职流程，同时也开始进行辞职准备工作。刚好等到了年后，我也在公司工作了两年，到时候出去简历也会好看些。</p>
+<p>至此，促使我辞职的理由变成了：</p>
+<ul>
+<li>超出身体承受能力的压力和强度，不可持续。</li>
+<li>公司以狼性文化要求和对待员工，却不提供可观的回报。</li>
+<li>作为程序猿，在公司工作了两年，即使不离职也应该去面试了解下市场的行情与技术，避免与市场脱节。</li>
+<li>工作时间太久，没有私人生活，导致工作生活无法平衡。长远来看（三到五年），没有时间阅读和思考，技术和非技术上都不会有太大的提升，最后会被困在眼前这份工作里，思维跳脱不出来，也无法尝试更多可能，生活一团糟。这些对自己的发展极为不利。</li>
+</ul>
+<p>而让我留下的理由变成了：</p>
+<ul>
+<li>工作内容核心，自己非常熟悉，领导赏识，职业向上晋级空间大，难度低。</li>
+<li>公司的期权伴随着公司上市会带来可观的回报</li>
+<li>稳定的工作状态和生活环境也是我所追求的，伴随公司长期成长才能获得较大的利益，同时我也很热爱深圳这座城市，那里的气候真是太让我喜欢了。（这里与程序猿过两年就该去面试不冲突，面试并不全是为了换工作。对我而言更多的是对自己查缺补漏，看看市场的价格，看看市场上的人才要求。再对比自己的不足，促进自己成长）</li>
+</ul>
+<p>于是，针对以上两方面，我反问自己以下几个问题：</p>
+<ul>
+<li>工作强度和压力在身体承受范围内，但是依旧会长期加班，没有私人时间，我会不会留下来？答案是不会，为了长期发展，这样的生活我不想接受。</li>
+<li>公司给足了钱，达到与互联网大厂同级的水平，我会不会留下来？答案是不会，而且我心里也并不想为了钱去那些互联网大厂。</li>
+<li>公司不再要求狼性文化，团队氛围不再996，我会不会留下来？答案是依旧会去找机会面试，但很大的可能会留下来。</li>
+<li>公司期权的兑现预期如何？能获得大概多少的回报？按照我离职时听到的消息，大概我可以获得五百万以内的回报，公司上市至少需要三年，中间包含的变量太多，上市后还不清楚公司会不会出台一些对期权变现的限制政策。</li>
+</ul>
+<p>对上面这几个问题有了答案之后，再结合现实中，公司极大概率会是长期996，工作强度和压力在我身体接受范围的边缘状态，但是我没有时间阅读，试错，提升。而这些是我非常看重的东西，在我看来人的成长是自己对这个世界认知的过程，没有时间阅读和试错的话就无法获取更多的认知，也就无法成长。</p>
+<blockquote>
+<p>试想一下，如果每天的时间都花在了工作的一亩三分地中，所接触的环境，遇到和解决的问题都是在一个范围内的，你每天没有时间和精力去干别的什么事情。当有一天，你遇到了这个范围以外的问题，你会发现自己是个新手，什么都不会，会有很强的无力感。这也是我前面说的会被困在工作里的意思。</p>
+<p>整个世界是非常庞大的，更多的问题来自于这个范围以外，我需要更多的时间来认知这个范围之外的事情，这些事情包括亲情关系，社会关系，社会运转体系等等。我相信只有对这些事情有更好的认知，才能在以后的生活中遇到困难与挫折时更加从容的面对它们，不至于感到无能为力而陷入焦虑。而只有阅读和试错才能让我更好的认知它们，我把这称为扩大自己的能力圈。</p>
+</blockquote>
+<p>在另一方面，获得期权回报的不确定性太高，而且这些回报与我所看重的扩大能力圈相比，至少在我现在这个阶段后者应该更重要。</p>
+<p>以上是我整个离职的思考过程，在要不要离职的这个决定的背后，占比最多的是我在扩大能力圈和坚持陪伴公司成长获得回报之间做出的选择。而做出这个选择的背后，是我对自己的认知。这个选择最终的结果，可能得多年后才能知道，如果我选错了，我想更可能的原因是由于对自己的认知不足，导致扩大能力圈失败。但是我想我不会后悔，因为这也是个试错的过程。</p>
+<h1 id="更加慎重的决定是否裸辞"><a href="#更加慎重的决定是否裸辞" class="headerlink" title="更加慎重的决定是否裸辞"></a>更加慎重的决定是否裸辞</h1><p>在决定了要辞职之后，下一个问题是该怎么辞职？是骑驴找马，还是直接裸辞。由于客观条件限制，我基本无法做到骑驴找马，所以选择了裸辞。但是在裸辞之前，需要先考虑一些实际的问题：</p>
+<ul>
+<li>生活压力（钱）的问题</li>
+</ul>
+<p>对于大部分人来说，裸辞最大的影响应该是没有了收入来源。所以在裸辞的时候，需要考虑到将来的一段时间完全没有收入，手里的钱够自己生活多久。有很多人不知道自己一个月会花多少钱，拍脑袋算出来的数目很可能并不客观。建议拉出自己过去一年的账单，计算下每个月的支出项目平均值。一年内有贷款的话，注意需要将自己的日常消费与贷款还款的钱分开计算，否则平均值有可能不能够代表未来一段时间的支出。</p>
+<p>除了日常消费和贷款偿还的钱以外，还建议考虑下意外情况的支出，给自己做足压力测试。</p>
+<p>以我为例，预期是自己半年的时间没有收入，没有需要偿还的贷款，在加上之前已经为生活的意外情况准备过一些预案，因此我需要准备好一笔勾自己半年花的钱才能裸辞。</p>
+<ul>
+<li>心理压力的问题</li>
+</ul>
+<p>裸辞所遇到的钱的问题，相对容易解决，更难以解决的是心理压力问题。如果你把裸辞的事情告诉了家里人，家里人可能隔三差五就要来问问你，替你担心。</p>
+<p>以我为例，初期我没告诉家里人我裸辞了，想着自己gap一段时间，好好沉淀下，夯实基础再去面试。于是开始做一些学习计划，然而后面由于计划执行进度落后自己预期，会时常感到焦虑。同时偶尔的身体状态不好，也更拖累学习进度，心理状态更加不好，容易陷入恶性循环。</p>
+<p>我爷爷在后期得知了我裸辞之后，特别着急，隔三差五就来电话询问我找工作的情况。本来我的心态还行，但是在他那样的状态下，我反而要去安慰他。很影响我自己的心态。</p>
+<h1 id="辞职准备"><a href="#辞职准备" class="headerlink" title="辞职准备"></a>辞职准备</h1><p>在做好了辞职决定，并且接受裸辞后，就需要开始做一些辞职准备了。</p>
+<ul>
+<li>如果可以的话，想清楚自己要什么</li>
+</ul>
+<p>在做完了辞职决定的时候，你心理一定清楚的是自己不要什么。但是你也可能会跟我一样，不知道自己要什么。这个问题对我来说很难。只是很清楚那样的工作和生活我不想要，但是完全看不清未来，不知道自己想要什么，没有方向感。如果能够想清楚的话，那也会目标很清晰，不会觉得未来迷茫，对后续的规划很有帮助。</p>
+<p>我其实直到离职之后很长一段时间都没有想清楚这个问题。但是有了一个模糊的方向后，朝着那个方向努力，踏出离职这第一步也是比较重要的。</p>
+<ul>
+<li>一份规划</li>
+</ul>
+<p>首先是需要做个规划，每个人裸辞后做的事情不太一样，但是大体上你都需要一个规划。这个规划建议以更长的视角来看。</p>
+<p>还是以我为例，我计划裸辞后，下一份工作尽量摆脱无休止的加班，即使在薪资上有所妥协也愿意。那么观察了一圈，发现最合适的是外企，其次是甲方单位。但是甲方大多是国企，风格上我不太喜欢。所以就很想去外企。接着在深圳这座城市，合适的外企并不多，更多的是在上海。去往上海的话，离我家更近，对我来说也是个不错的选择。尽管我很喜欢深圳，但是为了长久考虑，去上海更适合我。</p>
+<p>确定了去上海的外企这个方向后，就需要围绕这个目标来做规划。外企一般对英语要求较高，所以加强英语方面的能力势在必行。同时，自己的几个目标公司都对算法要求较高，那系统的练习算法也是必须的。同时，还有关于系统设计和基础知识方面的内容。建议这个时候可以开始写简历了，在一家公司干了一段时间，能够写在简历上带走的才是你的能力。写简历有助于梳理自己的技能树，更好的做规划。</p>
+<p>做规划需要尽可能的详细和考虑更多的因素，并且在离职前就开始按照规划进行。比如规划每一件事情，要尽量包含目标，达到目标的时间，每天的节奏等。然后离职前开始按照规划执行，这样可以让自己明白自己的速度，能否顺利完成规划的事情，是否需要调整预期，或者作出取舍。有时候并不是自己不够自律的按计划执行，而是低估了完成目标需要花费的时间，或者是高估了自己所拥有的时间。这些在离职前就开始着手进行的话，会有较多的试错和调整空间。</p>
+<p>还有一点比较重要的是，在规划完之后，将截止日期往后延期一两个月。这是因为我一般做计划都喜欢给自己预留缓冲量。倒不是给自己拖延找时间。而是为了避免中途发生的意外情况。就像我一般赶车，正常提前一个小时到机场基本就够了，但是我会提前一个半小时到机场，这样我走到一半发现身份证没带回去拿还有机会赶得上。</p>
+<blockquote>
+<p>这一点是我在离职前没有做好的事情。我只是有了个大概的目标，但是毫无规划。后来离职后的规划做的太离谱，给自己排的时间不够。高估了自己完成任务的速度，这导致我完成一件事情会延期，离职后一旦规划的事情出现了延期，就会很影响心态。</p>
+</blockquote>
+<ul>
+<li>攒够钱</li>
+</ul>
+<p>在完成规划后，你知道自己大概需要多久能获得下一份工作。在开始下一份工作后，再过一个月才能拿到收入。因此，你需要攒够这一段时间要花的钱。这里我也是喜欢给自己留足缓冲量，除了家里的应急钱和gap期间的生活开支以外，再多留两三个月的支出。这是为了预防我没能在预期时间内找到工作。</p>
+<p>个人觉得，做好了上面的事情就可以开始提出走离职流程了。</p>
+<h1 id="辞职后"><a href="#辞职后" class="headerlink" title="辞职后"></a>辞职后</h1><p>在离开了公司后，由于会有一段空档期。所以这段时间最需要注意的是自己的社保情况。可以自己找淘宝代缴，也可以自己去人社局缴，各地政策不太一样，但是最好能够保证不会断档。因为断档会影响购房等资格。淘宝代缴的话需要提前跟卖家沟通好，要与新公司开始缴纳的接续上，不然淘宝退的晚可能也会有问题。这点需要注意。</p>
+<p>当然政策会时有更新，这只是目前的情况。</p>
+<h1 id="找工作准备"><a href="#找工作准备" class="headerlink" title="找工作准备"></a>找工作准备</h1><p>离职前已经做的那些准备都是为了在gap期可以不要有那么大的压力。对我来说，储蓄了足够的现金使得我在gap期遇到各种意外情况时都觉得不至于压力很大。更多的压力来源于该怎样找到一份合适的好工作。</p>
+<p>原本计划就是在gap期做些沉淀，然后再出去尝试。我列举了一系列的目标公司，针对公司的招聘jd进行准备。有些公司偏重算法，有些偏重基础，有些偏重系统架构设计。这些都需要做一些准备，否则贸然去面可能不会有好结果，并且被吊打了的话还蛮影响心态的。</p>
+<p>也可以去各个网站，论坛，脉脉，知乎，牛客了解下公司的面经和公司整体情况。不符合目标的公司就不要浪费时间了。每一场面试都应该是有目的和意义的。有得为了锻炼自己，有得为了提升信心，有得为了练手。但是不要用那些垃圾公司来做试金石，因为你可能碰到一个垃圾的面试官，那样就纯粹是浪费时间浪费精力。</p>
+<h1 id="学习经验"><a href="#学习经验" class="headerlink" title="学习经验"></a>学习经验</h1><p>我在gap期做了很多算法，系统设计还有java训练营的学习。但是对市面上的一些流行技术了解不够多，这方面还是比较被动。只有在我实际开始学习，开始做准备的时候，我才意识到原来差距真的挺大的。很多应届生的面试题我都不会。后来开始学习的时候，又各种原因耽误，始终难以进入最佳状态。一天能够做的事情真的很少，当时我一天既要学习架构又要学习算法，结果后来就导致架构没学好，算法进展也很慢。一个月下来，发现与自己的预期相差甚远。</p>
+<p>另一方面，自己也低估了期望公司的面试难度。事前没有做好调查，我以为难度是70分，然而实际上的难度是90分。我本以为做到70分需要一个月，实际上快的也需要三个月，做到90分需要五个月。这还是在全心投入一件事情上的结果，而我想要同时学习多个方向，效果更差。这些都是我先前没有调查清楚，没有提前行动，导致我的规划基本上不可实现。</p>
+<p>后来我放弃学习架构和训练营，主攻算法，同时复习基础内容。最后也放弃了列表里的一部分公司。其实这些学习积累更多的应该是平时做，而不是离职后才做。但是之前的工作太忙，根本没时间做这么多积累输出。甚至对于系统的架构设计都没太多时间查阅资料，做详细的研究和验证。导致离开了工作后，真正能带走的属于自己的东西不多。这也是我讨厌无休止加班的原因。</p>
+<h1 id="心态调整"><a href="#心态调整" class="headerlink" title="心态调整"></a>心态调整</h1><p>在gap期间，我生过几次小病，还晕倒过一次。每次一生病就会让自己变得很低落。同时由于学习进度落后太多，自己又会陷入焦虑。看着目标公司的门槛比自己预期的高出一大截，心理的焦虑又增加几分。生病期间，整个人都是很不好的状态。所幸我没有面临太多来自家里人的压力，因为他们不知道我裸辞了。直到现在我已经入职新公司了，依旧觉得这个决定做的很对。我父母还好，基本不会太过问。但是爷爷奶奶就非常担心。感觉他们比我还要焦虑。</p>
+<p>所以，离职后虽然自由，但是依旧要小心的保护好自己身体健康。一定要饮食规律！锻炼身体我就不说了，作息规律，饮食规律非常重要。离职后每天就睡到中午，然后开始打游戏，追剧。这种日子偶尔过两天还行。但是裸辞的话，最好一天也不要过这样的日子。首先是因为这种日子真的很有吸引力，一旦过上了就不想离开了。我生病的时候就会让自己变成一个毫不努力的废物的状态。废物真的太舒服了，所以即使后来身体恢复了也不想朝九晚五的去学习。但是不学习，不努力又会使我变得焦虑。所以我整个gap期间，这样的日子过得也不多。大多数日子，只要有空我就会去图书馆或者咖啡馆，进步会极大的缓解我的焦虑，甚至会让我有开心的感觉。</p>
+<p>因此我在gap期间，焦虑状态有过好几次，但是得益于坚持学习和足够的储蓄，最终算是平安度过，最后也拿到个自己觉得合适的offer。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/17/关于第二次换工作的面试经验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/17/关于第二次换工作的面试经验/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-17T16:24:19+08:00">
+                2021-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,501
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="面试记录与经验感受"><a href="#面试记录与经验感受" class="headerlink" title="面试记录与经验感受"></a>面试记录与经验感受</h1><h2 id="花旗"><a href="#花旗" class="headerlink" title="花旗"></a>花旗</h2><h3 id="面试记录"><a href="#面试记录" class="headerlink" title="面试记录"></a>面试记录</h3><p>花旗的面试过程比较坎坷，显示2020年底被人力找到简历直接电话过来问我有没兴趣。当时抱着试试水的态度面了一下，也是我离职后第一次安排面试。后来一面人力反馈说是因为面试官觉得支付类的业务更适合我，与当时的职位不太匹配而挂掉。</p>
+<p>过完年后，2021年初，开始正式找工作的时候，又被人力把简历捞起来，推荐到另外个组的岗位上去。最终有了第二次面试花旗的机会。</p>
+<p><img src="/2021/04/17/关于第二次换工作的面试经验/微信图片_20210417170321.jpg" alt="img"></p>
+<h3 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h3><p>花旗是外企，从事金融类业务。我面试的岗位做的是风控业务。跟我上一段工作经历有些类似的地方，所以在业务背景上，也算是有些相关。然后就技术上来说，整体上初面侧重于基础，问的技术问题都非常简单，唯一让我觉得有些为难的是英语对话。不管是第一次一面的英文，还是第二次一面的英文我都觉得表现发挥的不太好。难以表达出自己的意思，其实词汇量问题不大，主要是没有过锻炼的机会。之前有约教练联系过一些，但是效果不太好，也没坚持。英文方面表现最好的其实算是第二次的二面，与面试官交流的比较多。主要是因为第二次面试的时候，面试官打开了我跟他讨论的话匣子，我可以用英语说得比较多，然后说得多也就愈发的接近我想要表达的意思了。</p>
+<p>二面的技术难度比一面相对更高，就几家公司的面试情况来看也基本都是这个特征。一面主要是摸底，二面会提高技术难度，问的更深更细节，当然不同公司的侧重点还是不一样。花旗的二面在我介绍完自己熟悉多线程后，直接开始从多线程相关的开始追问细节。<strong>整体上面试官会问的多的是，简历上写着自己熟悉的技能，且面试官自己比较了解的。</strong>无法得知面试官熟悉了解哪些，只能从招聘的jd结合他们的业务技术栈上猜测。所以最核心的还是把简历上自己写的熟悉的技能了解清楚。其次，针对一些基础性问题需要尽量确保不能犯错，这点需要平时积累。</p>
+<p>最后三面的时候，Manager没有面试，直接让人力来谈薪水，说是他把控下薪资范围就行。后来人力电话过来开了28k的水平，我觉得符合预期便没有再多要。其实最后人力申请的时候，是申请下来了28.5k。这让我意识到在谈薪的时候，其实是可以在对方开价的基础上多要一些的。我没有敢多要的原因是担心对方会因为觉得薪资差距太大而不发这个offer。在这点上，我做的非常差，有机会还是需要多加尝试。</p>
+<p>谈薪后，花旗会开始走背调流程，一轮背调完成后便正式发放offer。需要提交的资料很多，漏了就会影响流程，我由于各种原因耽搁，整个流程走了一个月左右才收到offer。</p>
+<p>花旗面试过程中最大的硬伤就是自己的<strong>英语水平不足</strong>，这一点在面试外企的时候还是比较被动的。会限制自己的发挥，让自己显得自信不足。</p>
+<h2 id="茄子快传"><a href="#茄子快传" class="headerlink" title="茄子快传"></a>茄子快传</h2><p>面试茄子的时候，只是想着练手，并没有真的想要去入职。初面的时候，聊的内容基本都是我在Java训练营里学到的一些东西，详细的面试问题没有整理，可以去百度云上听下录音。面试问的问题质量还可以，初面也问的不深，基本上答到点上就可以了。后续的二面因为需要约上海现场面试，我年后一直没有安排去上海的现场，所以就没有后续了。</p>
+<h2 id="神策数据"><a href="#神策数据" class="headerlink" title="神策数据"></a>神策数据</h2><h3 id="面试记录-1"><a href="#面试记录-1" class="headerlink" title="面试记录"></a>面试记录</h3><p><img src="/2021/04/17/关于第二次换工作的面试经验/神策.jpg" alt=""></p>
+<h3 id="经验总结-1"><a href="#经验总结-1" class="headerlink" title="经验总结"></a>经验总结</h3><p>通过面试和查阅资料发现这个公司在大数据处理领域还是做得很好的，近几年发展的很快。我是偶然在一个群里得到了群友的内推，才面试的这家公司。刚好这个公司又在合肥，于是便想尝试一下，看看老家那边的薪资情况是什么样的。</p>
+<p>整体来看，其实神策的面试自我感觉发挥并不是很好，但是面试风格我很喜欢。一面开始考察代码，需要手写死锁问题。二面考察算法和经典的url过程问题，但是回答的不好。算法给出了思路，但是写的过程中，ide崩溃导致代码没有写完。其实是道简单题，不用dp也可以做出来（面试官也提示了可以用暴力解法），只是我陷入了之前看题解的思维惯式，一味着想要写出dp解法，导致时间耗费的很久。后来的三面需要到现场面试，与合肥研发中心负责人面对面沟通，这一点我也挺喜欢。三面给我的感觉是神策在快速发展，进去之后肯定会有压力，有点华锐的感觉，但是与华锐的企业文化又是完全不同的。总之感觉上会比华锐好很多，公司加班也不会特别严重。</p>
+<p>感觉是因为我面试的时候没有发挥很好，最后的职级定的我不是很满意，公司人力给我谈薪水的时候也是明确的表明，开出的薪资是上限，没有argue的空间。给出的薪资虽说是这个职级的上限，但并没有达到我的预期，最后还是决定拒了这个offer。不过，拿到神策offer的过程让我觉得对自己这段时间的付出有些欣慰，在一个群里看到有朋友说能拿到神策offer的水平差不多可以跟阿里差不多。其实神策的团队是百度出来的，能看出来确实比较注重技术，所以拿到offer也算是对我自己的认可。</p>
+<p>这次面试所暴露出的主要问题是我<strong>对算法不够熟练</strong>，<strong>对技术的广度了解不够</strong>，像url的过程这种问题了解的较浅。</p>
+<h2 id="万得"><a href="#万得" class="headerlink" title="万得"></a>万得</h2><h3 id="面试记录-2"><a href="#面试记录-2" class="headerlink" title="面试记录"></a>面试记录</h3><p><img src="/2021/04/17/关于第二次换工作的面试经验/万得.jpg" alt=""></p>
+<h3 id="经验总结-2"><a href="#经验总结-2" class="headerlink" title="经验总结"></a>经验总结</h3><p>由于竟业限制，万得从一开始就是我想用来练手，找找感觉的。一面主要是业务背景，技术上聊得比较少。二面就完全是技术上的问题了。万得面试中一个非常加分的项是，二面考察实际代码能力，真正的编写实现了一个小需求。这样可以很好的考察出候选人的代码水平，还有整个思路，设计与实现。二面整个过程中与面试官聊得都非常好，面试官也表示的很欣赏。所以二面很快就过了，后续三面约的是高管的视频面。虽然他笑的和蔼但是可以感受的到有些虚伪，最后的表示面试肯定会给过，但薪资水平只能给到跟上家差不多的样子。最终人力让我等offer，等了一周多后，发现被挂了。很莫名其妙。联系人力说是大老板给挂了，他们也没办法。</p>
+<p>后续在等offer的过程中，我也查看了很多关于万得的资料。整体上可以看出来，员工对公司的评价都是不太好，这点让我很不喜欢。负面太多，公司大概或多或少存在一些问题。</p>
+<h2 id="招银"><a href="#招银" class="headerlink" title="招银"></a>招银</h2><h3 id="面试记录-3"><a href="#面试记录-3" class="headerlink" title="面试记录"></a>面试记录</h3><p>招银是找的朋友内推，事先打听了很多内部消息。确定是目标公司后，才开始投的简历。不过此时已经拿到花旗的口头offer，背调在流程中，所以担心会有幺蛾子，于是在给自己创造一些可选项。</p>
+<p>社招笔试，具体的笔试题目已经不记得了。是在牛客上直接做的，前面的选择题还比较简单，后面有两道算法题，我没有AC。用例没有完全跑通过。值拿到了一半多的分数。</p>
+<p>笔试后几天，收到了面试邀约。面试当天的效率很高，一天面完三轮，都是视频面。连续进行的。一面和二面表现的都不太好，java基础的一些问题都能回答的上来。但是涉及到一些数据库表的设计，与业务相关的设计时我答得很不好。二面的时候，我甚至没有完全理解面试官题目的意思。没想到最后也是过了。二面面试官问我了不了解DDD，然而对于这方面我丝毫没有涉足过。</p>
+<p>即使整体上面的面试自我感觉很差，面试过了一周后，本以为已经没戏了。但是最后居然还是告诉我面试通过了。最后给的offer整体价格也不错。但是仔细对比后，也咨询了朋友的意见，最后还是决定去了花旗</p>
+<h3 id="经验总结-3"><a href="#经验总结-3" class="headerlink" title="经验总结"></a>经验总结</h3><p>招银的面试整体上来说，我也算是尽力。但是有些地方的表现，自我还是不太满意。比如算法方面，没能够AC还是没达到我的期望。<strong>算法还需要多加练习。</strong></p>
+<h2 id="菜鸟"><a href="#菜鸟" class="headerlink" title="菜鸟"></a>菜鸟</h2><h3 id="面试记录-4"><a href="#面试记录-4" class="headerlink" title="面试记录"></a>面试记录</h3><p><img src="/2021/04/17/关于第二次换工作的面试经验/菜鸟.jpg" alt=""></p>
+<h3 id="经验总结-4"><a href="#经验总结-4" class="headerlink" title="经验总结"></a>经验总结</h3><p>面试菜鸟比较意外，我并没有投递简历。面试官说是可能从某个猎头那收到的。整场面试中，可以感觉的出来，面试官比较侧重于我对项目架构选型的认知。项目为什么要这么做技术选型？对比市面上其他技术的优缺点有哪些？而这些问题我确实准备的不足。风控引擎这方面我对市面上其他技术了解的不多，流式计算，脚本引擎这些技术选型的对比也都不了解。所以最后利索当然的没有通过。</p>
+<p>这场面试其实对我来说是比较有价值的，在不长的面试过程中暴露出了我的一个比较严重的问题。<strong>对于自己做的项目技术架构要有思考，需要知道为什么这么做技术选型</strong>。如果以后要走技术方向的话，了解清楚这些是必须的。不然以后就只能混日子，没有自己的思考在职业生涯上很难走得远。同样在面试其他企业的时候，我认为一些资深一点的岗位也必然会问到这些问题，所以以后还是需要在这方面有所加强才行。</p>
+<p>以后在技术细节上，可以不用了解清楚每一个框架，但是需要知道每个框架的大致工作原理以及优缺点。这样才好结合实际的业务场景做tradeoff，更有甚者还需要做技术验证来确定那种选型效果好。</p>
+<h2 id="我问的问题"><a href="#我问的问题" class="headerlink" title="我问的问题"></a>我问的问题</h2><p>在面对不同轮次面试官的时候，需要问的问题肯定也有不同的侧重点。一般来说，一面的面试官级别更接近一线，所以可以问他关于岗位具体业务，技术架构，加班强度方面的问题。二面的面试官一般会在公司侧重的技术路线或者业务上问的比较深一点，职级一般也会更高一些。可以问他团队规模，期望什么样的人加入他的团队。针对人力面可以问他关于公司组织架构，职级构成，企业文化等方面的问题。如果是高管的面试，可以问他关于他对于公司业务未来发展方向的看法等。下面也列举了一些我记录的问题：</p>
+<p><img src="/2021/04/17/关于第二次换工作的面试经验/问题.jpg" alt=""></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>最后，面试时一方面靠的是运气，另一方面靠的是硬实力。所以在找工作的时候，很多时候没拿到offer并不是实力问题，很有可能就是运气差了点。你看万得最后鸽了我的offer，总不能是因为我的实力不够。有可能就是他们刚好找到个性价比更高的人，也有可能是刚好收紧预算，hc不够了。实际原因我永远也不会知道，但是抱怨吐槽后，继续相信自己才是最重要的。我们能做的就只有靠提升自己的实力来尽量抓住机会。</p>
+<p>罗翔老师说某一位哲学家说过，我们每个人都拿着并非自己所选择的剧本，登上并非自己所选择的舞台。而我们所能做的也就只有演好自己手中的剧本。我们需要认识到，人的局限性。人生中太多的事情并非我们所能掌控，我们自己能决定的可能只有5%都不到。</p>
+<p>在找工作的时候也是一样，认识到自己的局限性，同时演好自己手中的剧本。认识到拿到offer需要靠很多运气，同时努力提升硬实力来抓住每一次机会。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/11/Notion OKR手册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/11/Notion OKR手册/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-11T12:09:22+08:00">
+                2021-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  142
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Notion-OKR制作教程"><a href="#Notion-OKR制作教程" class="headerlink" title="Notion OKR制作教程"></a>Notion OKR制作教程</h1><h1 id="Notion-OKR的效果图"><a href="#Notion-OKR的效果图" class="headerlink" title="Notion OKR的效果图"></a>Notion OKR的效果图</h1><h1 id="创建主库"><a href="#创建主库" class="headerlink" title="创建主库"></a>创建主库</h1><h2 id="创建Quarters库"><a href="#创建Quarters库" class="headerlink" title="创建Quarters库"></a>创建Quarters库</h2><h2 id="创建Objectives库"><a href="#创建Objectives库" class="headerlink" title="创建Objectives库"></a>创建Objectives库</h2><h2 id="创建Key-Result库"><a href="#创建Key-Result库" class="headerlink" title="创建Key Result库"></a>创建Key Result库</h2><h1 id="创建OKRs"><a href="#创建OKRs" class="headerlink" title="创建OKRs"></a>创建OKRs</h1><h1 id="关联数据库"><a href="#关联数据库" class="headerlink" title="关联数据库"></a>关联数据库</h1><h2 id="将Quarters关联到Objectives上"><a href="#将Quarters关联到Objectives上" class="headerlink" title="将Quarters关联到Objectives上"></a>将Quarters关联到Objectives上</h2><h2 id="将Objectives关联到Key-Result上"><a href="#将Objectives关联到Key-Result上" class="headerlink" title="将Objectives关联到Key Result上"></a>将Objectives关联到Key Result上</h2><h1 id="初始化汇总"><a href="#初始化汇总" class="headerlink" title="初始化汇总"></a>初始化汇总</h1><h2 id="通过Objective来计算进程"><a href="#通过Objective来计算进程" class="headerlink" title="通过Objective来计算进程"></a>通过Objective来计算进程</h2><h2 id="通过Quater来计算进程"><a href="#通过Quater来计算进程" class="headerlink" title="通过Quater来计算进程"></a>通过Quater来计算进程</h2><h2 id="创建可视化进度条"><a href="#创建可视化进度条" class="headerlink" title="创建可视化进度条"></a>创建可视化进度条</h2><h2 id="汇总你激活的指标"><a href="#汇总你激活的指标" class="headerlink" title="汇总你激活的指标"></a>汇总你激活的指标</h2><h2 id="通过可选择的汇总日期排序"><a href="#通过可选择的汇总日期排序" class="headerlink" title="通过可选择的汇总日期排序"></a>通过可选择的汇总日期排序</h2><h1 id="为常用内置页设置模板"><a href="#为常用内置页设置模板" class="headerlink" title="为常用内置页设置模板"></a>为常用内置页设置模板</h1><h2 id="通过Quater来过滤Objective"><a href="#通过Quater来过滤Objective" class="headerlink" title="通过Quater来过滤Objective"></a>通过Quater来过滤Objective</h2><h2 id="通过Objectives来过滤Key-Results"><a href="#通过Objectives来过滤Key-Results" class="headerlink" title="通过Objectives来过滤Key Results"></a>通过Objectives来过滤Key Results</h2><h1 id="为OKR创建网关"><a href="#为OKR创建网关" class="headerlink" title="为OKR创建网关"></a>为OKR创建网关</h1><h1 id="撰写季度反馈"><a href="#撰写季度反馈" class="headerlink" title="撰写季度反馈"></a>撰写季度反馈</h1><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><a href="https://www.notion.vip/achieve-your-goals-okrs-in-notion/" target="_blank" rel="noopener">翻译原文出处</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/19/LeetCode/算法模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/03/19/LeetCode/算法模板/" itemprop="url">常见算法模板</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-19T22:28:39+08:00">
+                2021-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,377
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="常见算法模板"><a href="#常见算法模板" class="headerlink" title="常见算法模板"></a>常见算法模板</h1><p>本文记录常用的算法模板</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/03/19/LeetCode/算法模板/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/21/JDB debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/21/JDB debug/" itemprop="url">JDB debug操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-21T20:02:12+08:00">
+                2020-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JDB/" itemprop="url" rel="index">
+                    <span itemprop="name">JDB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  416
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="JDB-debug"><a href="#JDB-debug" class="headerlink" title="JDB debug"></a>JDB debug</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/11/21/JDB debug/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/LeetCode/LeetCode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/21/LeetCode/LeetCode/" itemprop="url">LeetCode记录总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-21T22:28:39+08:00">
+                2020-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  23,158
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="LeetCode记录总结"><a href="#LeetCode记录总结" class="headerlink" title="LeetCode记录总结"></a>LeetCode记录总结</h1><p>本文章主要记录LeetCode刷题学到的知识</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/21/LeetCode/LeetCode/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/Binary Search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/03/Binary Search/" itemprop="url">Binary Search</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T16:28:39+08:00">
+                2019-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  429
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h1><p>This is a summary of binary search algorithm.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/03/Binary Search/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/ARTS/ARTS-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/21/ARTS/ARTS-12/" itemprop="url">ARTS打卡第十二周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-21T20:28:39+08:00">
+                2019-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  682
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="ARTS第十二周"><a href="#ARTS第十二周" class="headerlink" title="ARTS第十二周"></a>ARTS第十二周</h1><p>本次ARTS主要包括：853题（car fleet）算法题；《effective java》中关于接口应该只被用来定义类型和通过继承来实现标志类，以及关于内部类的使用和类的命名；关于DDIA的部分阅读后真理的脑图。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/21/ARTS/ARTS-12/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/ARTS/ARTS-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/30/ARTS/ARTS-11/" itemprop="url">ARTS打卡第十一周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T20:28:39+08:00">
+                2019-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  886
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="ARTS第十一周"><a href="#ARTS第十一周" class="headerlink" title="ARTS第十一周"></a>ARTS第十一周</h1><p>本次ARTS主要包括：564题（通过删除匹配到字典里最长的单词）和767题（重构字符串）算法题；《effective java》中关于类的最小可修改和接口优于继承的内容。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/30/ARTS/ARTS-11/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/月线反转/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小蚂蚁爱吃香蕉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/29/月线反转/" itemprop="url">RPS曲线制作与使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T09:11:23+08:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Reading/" itemprop="url" rel="index">
+                    <span itemprop="name">Reading</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  126
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="月线反转的应用"><a href="#月线反转的应用" class="headerlink" title="月线反转的应用"></a>月线反转的应用</h2><ol>
+<li>超长的底部平台+月线反转信号；周线的特征是：股价围绕10周、20周和50周线上下波动。当周线的10周、20周、50周线形成多头排列，是长线牛股的最重要技术特征。买点：超长底部平台后出现月线反转，随后首次到10日线的下方是陶最喜欢的买点。</li>
+<li>月线反转之后出现净利润断层，则应高度重视。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="小蚂蚁爱吃香蕉" />
+            
+              <p class="site-author-name" itemprop="name">小蚂蚁爱吃香蕉</p>
+              <p class="site-description motion-element" itemprop="description">至诚，至坚，博学，笃行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Banana1995" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="gaomanyi698@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/chenpi/" title="风一样的码农" target="_blank">风一样的码农</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hollischuang.com/" title="hollischuang" target="_blank">hollischuang</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小蚂蚁爱吃香蕉</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
