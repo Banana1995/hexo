@@ -1,3 +1,13 @@
+---
+title: Notion OKR制作手册
+date: 2021-05-10 20:11:23
+categories: "Reading"
+tags: "notion"
+---
+
+记录notion OKR的制作过程，以便以后查阅
+<!--more-->
+
 # Notion OKR制作教程
 
 # Notion OKR的效果图
