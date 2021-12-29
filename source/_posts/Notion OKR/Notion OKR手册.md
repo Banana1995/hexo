@@ -224,11 +224,19 @@ tags: "notion"
 
 可以直接将“网关”页的OKRs复制一份，放在年度目标页面下。
 
-然后再输入“\”,创建一个`Create linked database`，来展示该年度的`Quarters `，`Objectives`, `Key Results` 等。
+然后再输入`\`,创建一个`Create linked database`，来展示该年度的`Quarters `，`Objectives`, `Key Results` 等。
 
 这样就可以在年度目标页面做总结，同时来年的OKRs，也无需再创建一遍，直接在原网关页面修改内容即可。
 
+# Tips
 
+- 使用`Wrap Cell`功能使得`Text`类型的`Properties`可以换行显示，而不是在单一行内容中显示：
+
+  ![1640770294162](tips1.png)
+  
+- 带有个下面箭头标志的只是个引用，真实的内容还是page内的，所以在复制时，只复制引用的话，依旧会链接到原有的page内,修改原page内容会影响到引用的结果。如果想要复制后的内容不受原page修改的影响，则需要直接复制原page内容：
+
+  ![1640770607819](tips2.png)
 
 # 引用
 
