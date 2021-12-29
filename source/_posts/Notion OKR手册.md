@@ -220,6 +220,14 @@ tags: "notion"
 
 考虑创建一个包含链接数据库的“Reflection”页面，在表中显示所有的区域和目标。
 
+# 撰写年度总结
+
+可以直接将“网关”页的OKRs复制一份，放在年度目标页面下。
+
+然后再输入“\”,创建一个`Create linked database`，来展示该年度的`Quarters `，`Objectives`, `Key Results` 等。
+
+这样就可以在年度目标页面做总结，同时来年的OKRs，也无需再创建一遍，直接在原网关页面修改内容即可。
+
 
 
 # 引用
